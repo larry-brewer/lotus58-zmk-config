@@ -21,7 +21,6 @@ include:
   - board: nice_nano_v2
     shield: lotus58_left
   - board: nice_nano_v2
-    shield: lotus58_right
+    shield: lotus58_right nice_view
   - board: nice_nano_v2
-    cmake-args: -DCONFIG_ZMK_DISPLAY=y -DCONFIG_NICE_VIEWS=y
     shield: settings_reset
