@@ -78,11 +78,11 @@
             //                     |  F11 |      |      |        |  |       |      |       |  F12  |
 
             bindings = <
-&kp F12      &kp F1           kp F2   &kp F3      &kp F4    &kp F5                                                    &kp F6          &kp F7    &kp F8     &kp F9  &kp F10  &kp F11
-&kp C_RESET  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                                         &kp NUMBER_6       &kp N7           &kp N8           &kp N9                &kp N0                 &trans
-&kp DELETE   &trans           &kp LEFT      &kp RIGHT     &kp UP_ARROW  &kp LEFT_BRACKET  &trans                &trans                 &kp RIGHT_BRACKET  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6       &kp TILDE              &kp PIPE
-&trans       &trans           &trans        &trans        &kp DOWN      &kp LEFT_BRACE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_1       &kp STAR               &trans
-                                            &trans        &trans        &trans            &kp DEL               &kp DEL                &to 3              &kp KP_NUMBER_0  &trans
+&kp F12       &kp F1 kp F2  &kp F3        &kp F4        &kp F5            &kp F6                                                          &kp F7           &kp F8           &kp F9           &kp F10    &kp F11   &kp C_RESET
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5            &kp NUMBER_6                                                    &kp N7           &kp N8           &kp N9           &kp N0     &trans    &kp DELETE
+&trans        &kp LEFT      &kp RIGHT     &kp UP_ARROW  &kp LEFT_BRACKET  &trans                &trans                 &kp RIGHT_BRACKET  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp TILDE  &kp PIPE  &trans
+&trans        &trans        &trans        &kp DOWN      &kp LEFT_BRACE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp STAR   &trans    &trans
+                                          &trans        &trans            &kp DEL               &kp DEL                &to 3              &kp KP_NUMBER_0  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
@@ -104,7 +104,7 @@
                                         &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp A B>;
         };
 
         layer_3 {
@@ -113,8 +113,22 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &mo 0   &trans
             >;
+        };
+
+        layer_4 {
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3  &kp NUMBER_4  &kp N5                          &kp N6  &kp N7         &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                           &kp Y   &kp U          &kp I      &kp O    &kp P     &kp BACKSLASH
+&kp LSHFT  &kp A   &kp S   &kp D   &kp F         &kp G   &sys_reset  &sys_reset  &kp H   &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X   &kp C   &kp V         &kp B   &kp GRAVE   &kp DELETE  &kp N   &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                           &none   &kp LGUI      &to 0   &kp ENTER   &kp SPACE   &mo 2   &kp RIGHT_ALT  &none
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
