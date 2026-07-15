@@ -56,14 +56,14 @@
             // 12|  TAB  |  Q  |  W  |  E   |  R   |  T   |                     |  Y   |  U    |  I    |  O   |   P   |   [   | 23
             // 24|  SFT  |  A  |  S  |  D   |  F   |  G   |  RESET  |  | RESET  |  H   |  J    |  K    |  L   |   ;   | ' SFT | 37
             // 38|  CTRL |  Z  |  X  |  C   |  V   |  B   |  MUTE   |  | PLAY   |  N   |  M    |  ,    |  .   |   /   | \ CTRL| 51
-            // 52                    |ENT RS|  ALT | SPACE|DELETE LW|  |ENTER RS| BSPC |  ] LW | RGUI  |                        59
+            // 52                    | ALT  |  ALT | LOWER| ENTER   |  | SPACE  | RAISE| RALT  | RALT  |                        59
 
             bindings = <
 &kp ESC    &kp N1  &kp N2  &kp N3        &kp NUMBER_4  &kp N5                          &kp N6  &kp N7         &kp N8         &kp N9   &kp N0    &kp BACKSPACE
 &kp TAB    &kp Q   &kp W   &kp E         &kp R         &kp T                           &kp Y   &kp U          &kp I          &kp O    &kp P     &kp BACKSLASH
 &kp LSHFT  &kp A   &kp S   &kp D         &kp F         &kp G   &sys_reset  &sys_reset  &kp H   &kp J          &kp K          &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z   &kp X   &kp C         &kp V         &kp B   &kp GRAVE   &kp DELETE  &kp N   &kp M          &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                           &kp LEFT_GUI  &kp LGUI      &mo 1   &kp ENTER   &kp SPACE   &mo 2   &kp RIGHT_ALT  &kp RIGHT_ALT
+                           &kp LALT      &kp LALT      &mo 1   &kp ENTER   &kp SPACE   &mo 2   &kp RIGHT_ALT  &kp RIGHT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -90,14 +90,14 @@
 
         raise_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |OUTTOG|OUTUSB| OUTBT |      | RESET | FLASH |
+            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |OUTTOG|OUTUSB| OUTBT |UNLOCK| RESET | FLASH |
             // |     | INS  | PSCR | GUI   | RESET |      |                | PGUP |      |   ^   |      |       |       |
             // |     | ALT  | CTRL | SHIFT | FLASH | CAPS |      |  |      | PGDN |   <- |   v   |  ->  |  DEL  | BSPC  |
             // |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |  |>  |  <|<| | |>|> |       |       |
             //                     |       |       |      |      |  |      |      |      |       |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &trans      &sys_reset  &bootloader
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &studio_unlock  &sys_reset  &bootloader
 &trans      &kp INS       &kp PSCRN     &kp K_CMENU   &sys_reset    &trans                        &kp PG_UP     &trans        &kp UP        &trans      &trans      &trans
 &trans      &kp LALT      &kp LCTRL     &kp LSHFT     &bootloader   &kp CLCK      &trans  &trans  &kp EQUAL     &kp LEFT      &kp DOWN      &kp RIGHT   &kp DEL     &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans  &trans  &kp PLUS      &kp C_PP      &kp C_PREV    &kp C_NEXT  &trans      &trans

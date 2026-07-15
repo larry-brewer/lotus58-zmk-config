@@ -3,3 +3,6 @@ build
 modules
 zmk/
 zephyr/*
+!zephyr/module.yml
+.west/
+app/
